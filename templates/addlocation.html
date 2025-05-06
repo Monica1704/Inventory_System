@@ -1,0 +1,68 @@
+<html>
+<head> 
+    <title>Flask</title> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #003366;
+        }
+
+        form {
+            background-color: #ffffff;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #66a3ff;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #267acc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Location</h1>
+    <form action="" method="post">
+        <label>Location Name:</label>
+        <input type="text" name="LocationName" required>
+
+        <input type="submit" value="Save Details">
+    </form> 
+</body> 
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product Movement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            color: #003366;
+        }
+
+        form {
+            width: 400px;
+            background-color: #ffffff;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+        select,
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #66a3ff;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #267acc;
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Product Movement</h2>
+
+    <form method="post">
+        <label for="ProductID">Product:</label>
+        <select name="ProductID" id="ProductID" required>
+            <option value="" disabled selected>Select a product</option>
+            {% for product in products %}
+                <option value="{{ product.ProductID }}">
+                    {{ product.ProductID }} - {{ product.Name }} (Available: {{ product.Quantity }})
+                </option>
+            {% endfor %}
+        </select>
+
+        <label for="FromLocationID">From Location:</label>
+        <select name="FromLocationID" id="FromLocationID">
+            <option value="">None</option>
+            {% for loc in locations %}
+                <option value="{{ loc.LocationID }}">{{ loc.LocationName }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="ToLocationID">To Location:</label>
+        <select name="ToLocationID" id="ToLocationID">
+            <option value="">None</option>
+            {% for loc in locations %}
+                <option value="{{ loc.LocationID }}">{{ loc.LocationName }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="Quantity">Quantity:</label>
+        <input type="number" name="Quantity" id="Quantity" min="1" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

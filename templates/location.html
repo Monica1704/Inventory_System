@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Locations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            margin: 0 0 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 60%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Locations</h1>
+    <p><a href="{{url_for('addlocation')}}">Add Location</a></p>
+    <table>
+        <tr>
+            <th>Location ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        {% for data in datas %}
+        <tr>
+            <td>{{data.LocationID}}</td>
+            <td>{{data.LocationName}}</td>
+            <td><a href="{{url_for('editlocation', id=data.LocationID)}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

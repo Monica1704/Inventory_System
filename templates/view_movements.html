@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Movements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f0f8ff;
+            color: #003366;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #3399ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #267acc;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #cce0ff;
+            color: #003366;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e6f2ff;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Product Movement Records</h2>
+    <p><a href="{{url_for('addmovement')}}">Add movements</a></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Movement ID</th>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>From Location</th>
+                <th>To Location</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for m in movements %}
+            <tr>
+                <td>{{ m.MovementID }}</td>
+                <td>{{ m.ProductID }}</td>
+                <td>{{ m.ProductName }}</td>
+                <td>{{ m.FromLocation or 'None' }}</td>
+                <td>{{ m.ToLocation or 'None' }}</td>
+                <td>{{ m.Quantity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

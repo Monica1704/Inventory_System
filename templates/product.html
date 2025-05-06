@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+            margin: 0 0 20px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Products</h1>
+    <p><a href="{{url_for('addproduct')}}">Add Product</a></p>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+        {% for data in datas %}
+        <tr>
+            <td>{{data.ProductID}}</td>
+            <td>{{data.Name}}</td>
+            <td>{{data.Price}}</td>
+            <td>{{data.Quantity}}</td>
+            <td><a href="{{url_for('editproduct', id=data.ProductID)}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

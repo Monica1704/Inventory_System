@@ -1,0 +1,74 @@
+<html>
+<head> 
+    <title>Add Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Product</h1>
+    <form action="" method="post">
+        <label>Product Name:</label>
+        <input type="text" name="Name" required>
+
+        <label>Price:</label>
+        <input type="number" name="Price" required>
+
+        <label>Quantity:</label>
+        <input type="number" name="Quantity" required>
+
+        <input type="submit" value="Save Details">
+    </form> 
+</body>
+</html>
