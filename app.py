@@ -27,19 +27,6 @@ def product():
     return render_template("product.html",datas=res)
 
 @app.route("/addproduct",methods=['GET','POST'])
-# def addproduct():
-#     if request.method=='POST':
-#         name=request.form['Name']
-#         price=request.form['Price']
-#         quantity=request.form['Quantity'] 
-#         con=mysql.connection.cursor()
-#         sql="insert into Products(Name,Price,Quantity) value(%s,%s,%s)"
-#         con.execute(sql,[name,price,quantity])  
-#         mysql.connection.commit()
-#         con.close()
- 
-#         return redirect(url_for("home"))
-#     return render_template("addproduct.html");
 @app.route("/addproduct", methods=['GET', 'POST'])
 def addproduct():
     if request.method == 'POST':
